@@ -1,0 +1,65 @@
+{
+  "admin_account": {
+    "id": "admin_root",
+    "username": "admin",
+    "email": "admin@g5meka.local",
+    "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "createdAt": "2026-11-05T00:00:00.000Z",
+    "updatedAt": "2026-11-05T00:00:00.000Z"
+  },
+  "system_settings": {
+    "id": "system",
+    "currency": "PKR",
+    "currencySymbol": "Rs.",
+    "businessName": "G5MEKA Gym Systems",
+    "contactEmail": "admin@g5meka.local",
+    "contactPhone": "+92 300 0000000",
+    "notes": "Central G5MEKA Platform Configuration",
+    "initializedAt": "2026-11-05T08:27:23.424Z"
+  },
+  "gyms": [
+    {
+      "id": "GYM-101",
+      "gymName": "Powerhouse Gym",
+      "ownerName": "Tariq Khan",
+      "ownerEmail": "tariq@powerhouse.pk",
+      "ownerMobile": "03001112233",
+      "gymAddress": "Gulberg III, Lahore",
+      "username": "powerhouse",
+      "passwordHash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+      "licenseStartDate": "2026-11-01",
+      "licenseExpiryDate": "2027-11-01",
+      "accountStatus": "active",
+      "createdAt": "2026-11-01T00:00:00.000Z",
+      "updatedAt": "2026-11-05T08:29:31.955Z",
+      "pricing": {
+        "oneTimePrice": 25000,
+        "setupCharges": 5000,
+        "discount": 0,
+        "negotiatedPrice": 30000,
+        "paymentReceived": 30000,
+        "remainingPayment": 0,
+        "purchaseDate": "2026-11-01",
+        "licenseType": "Annual"
+      }
+    }
+  ],
+  "gym_settings": [
+    {
+      "gymId": "GYM-101",
+      "gymName": "Powerhouse Gym",
+      "ownerName": "Tariq Khan",
+      "phone": "03001112233",
+      "whatsapp": "03001112233",
+      "address": "Gulberg III, Lahore",
+      "currency": "PKR",
+      "currencySymbol": "Rs.",
+      "defaultMonthlyFee": 2000,
+      "defaultDurationMonths": 1,
+      "whatsappMessageTemplate": "",
+      "updatedAt": "2026-11-05T08:29:14.680Z"
+    }
+  ],
+  "members": [],
+  "payments": []
+}

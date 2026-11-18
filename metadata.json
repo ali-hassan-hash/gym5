@@ -1,0 +1,8 @@
+{
+  "name": "G5MEKA - Gym Management System",
+  "description": "Simple, modern digital gym management system replacing paper registers and manual fee tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

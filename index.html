@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Suppress harmless Vite HMR WebSocket errors in AI Studio iFrame environment
+      (function() {
+        window.addEventListener('error', function(event) {
+          var msg = event.message || (event.error && event.error.message) || '';
+          if (msg.includes('WebSocket') || msg.includes('ws://') || msg.includes('wss://') || msg.includes('closed without opened')) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(event) {
+          var msg = (event.reason && (event.reason.message || String(event.reason))) || '';
+          if (msg.includes('WebSocket') || msg.includes('ws://') || msg.includes('wss://') || msg.includes('closed without opened')) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+          }
+        }, true);
+        var origConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var str = args.map(function(a) { return typeof a === 'object' ? (a && a.message ? a.message : JSON.stringify(a)) : String(a); }).join(' ');
+          if (str.includes('WebSocket') || str.includes('closed without opened')) {
+            return;
+          }
+          origConsoleError.apply(console, args);
+        };
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>G5MEKA - Gym Management System</title>
+    <meta name="description" content="Simple, modern digital gym management system replacing paper registers and manual fee tracking." />
+    <meta property="og:title" content="G5MEKA - Gym Management System" />
+    <meta property="og:description" content="Simple, modern digital gym management system replacing paper registers and manual fee tracking." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="G5MEKA" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
